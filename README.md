@@ -7,8 +7,6 @@ Publish a personal portfolio using HTML, CSS, JavaScript, and at least one API/A
 - [ ] Replace text with your name and info
 - [ ] Add at least **2 projects** (cards on Projects page)
 - [ ] One **API/AJAX** feature (e.g., quote, weather, GitHub repos)
-- [ ] Responsive layout (test at 360px, 768px, 1280px)
-- [ ] Lighthouse score ≥ 90 for Performance & Best Practices
 - [ ] Deployed with GitHub Pages
 - [ ] Put your live URL in Repo **About → Website** and README
 
