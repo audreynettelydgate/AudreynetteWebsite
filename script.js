@@ -1,18 +1,18 @@
-// Theme toggle
+// Pink Mode Toggle
 document.getElementById('themeToggle')?.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+  document.body.classList.toggle('dark-mode');
 });
 
-// Simple API fetch demo (AJAX)
+// Pink Quote API
 (async () => {
   const el = document.getElementById('quote');
   if (!el) return;
+
   try {
     const res = await fetch('https://api.quotable.io/random');
     const data = await res.json();
-    el.textContent = `"${data.content}" — ${data.author}`;
+    el.textContent = `“${data.content}” — ${data.author}`;
   } catch {
-    el.textContent = 'Could not load quote.';
+    el.textContent = 'Could not load quote 💔';
   }
 })();
