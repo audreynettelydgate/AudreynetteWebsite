@@ -11,27 +11,24 @@ A Web Design Final Project — CSC-2001
 This is my final project for CSC-2001: Web Design.
 I created a personalized Hello Kitty portfolio website using HTML, CSS, JavaScript, and a live Weather API feature.
 
-The site is fully deployed using GitHub Pages and includes multiple pages, interactivity, and responsive design.
+The site is deployed using GitHub Pages and includes multiple pages, interactivity, and responsive design.
 
-🎀 Features
+##🎀 Features
 Home Page
 
-- Custom Hello Kitty pink theme
+- Hello Kitty pink theme
 - Floating bow animation
-- Custom Hello Kitty cursor
 - Randomized quote generator
-- Theme toggle button
-- Clean responsive layout
-- Hello Kitty–framed avatar
+- Clean layout
 
-✅ Projects Page
+##🎀 Projects Page
 
-- Card-style layout displaying two projects:
-- My full personal website
-- A weather application built with the Open-Meteo API
+- Card layout displaying two projects:
+- My personal website
+- A weather application made with the Open-Meteo API
 - Responsive grid layout
 
-✅ Weather App (API Project)
+##🎀 Weather App (API Project)
 
 - Uses Open-Meteo Weather API
 - Search by city
@@ -39,12 +36,12 @@ Home Page
 - Built with JavaScript using fetch()
 - Styled to match Hello Kitty theme
 
-✅ Contact Page
+##🎀 Contact Page
 
 - Minimalist pink design
 - Contact text and layout aligned with overall theme
 
-🎀 Styling & Design
+##🎀 Styling & Design
 
 - Custom CSS variables for theme consistency
 - Mobile responsiveness
@@ -53,13 +50,18 @@ Home Page
 - Custom fonts and colors
 - Cute, branded visuals throughout
 
-🛠️ Technologies Used
+##🎀Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript (ES6)
 - Open-Meteo API
 - GitHub Pages Deployment
+
+##🎀 Credits
+
+All design and code created by Audreynette Lydgate.
+Images credited to Sanrio and Pinterest sources (for educational use only).
 
 # Portfolio Final Project (CSC-2001)
 
