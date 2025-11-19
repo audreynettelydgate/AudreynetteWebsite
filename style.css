@@ -127,12 +127,7 @@ body.pink-theme {
   background: #222;
   color: #fff;
 }
-body {
-  cursor: url('https://i.imgur.com/N4f2E4H.png') 16 16, auto;
-}
-a:hover, button:hover {
-  cursor: url('https://i.imgur.com/N4f2E4H.png') 16 16, pointer;
-}
+
 #bows-container {
   position: fixed;
   top: 0;
