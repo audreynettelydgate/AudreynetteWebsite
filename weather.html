@@ -1,1 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Weather App</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="pink-theme">
+<nav class="nav">
+<img class="kitty-icon" src="https://wallpapers.com/images/featured/hello-kitty-pictures-xeulf538v4jogtue.jpg" alt="Kitty Icon">
+<a href="./index.html">Home</a>
+<a href="./projects.html">Projects</a>
+<a href="./contact.html">Contact</a>
+<button id="themeToggle" aria-label="Toggle theme">🎀</button>
+</nav>
 
+
+<main class="weather-container">
+<h1>🌤️ Hello Kitty Weather App</h1>
+<p class="tagline">Check the weather anywhere, cuteness included 💖</p>
+
+
+<div class="weather-box">
+<input type="text" id="cityInput" placeholder="Enter city name..." />
+<button id="checkWeather">Check Weather</button>
+
+
+<div id="weatherResult" class="weather-result hidden">
+<h2 id="location"></h2>
+<p id="temperature"></p>
+<p id="conditions"></p>
+</div>
+</div>
+</main>
+
+
+<script>
+document.getElementById('checkWeather').addEventListener('click', async () => {
+const city = document.getElementById('cityInput').value;
+if (!city) return alert("Please enter a city!");
+
+
+const API_KEY = "https://api.weatherapi.com/v1/current.json?key=7cfac0c7da2e41b884b150526250211&q=";
+
+
+try {
+const res = await fetch(API_KEY + city);
+const data = await res.json();
+
+
+document.getElementById('location').textContent = data.location.name + ", " + data.location.region;
+document.getElementById('temperature').textContent = "Temperature: " + data.current.temp_f + "°F";
+document.getElementById('conditions').textContent = "Condition: " + data.current.condition.text;
+
+
+document.getElementById('weatherResult').classList.remove('hidden');
+} catch (err) {
+alert("City not found or API error.");
+}
+});
+</script>
+</body>
+</html>
