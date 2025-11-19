@@ -13,7 +13,7 @@ I created a personalized Hello Kitty portfolio website using HTML, CSS, JavaScri
 
 The site is deployed using GitHub Pages and includes multiple pages, interactivity, and responsive design.
 
-##🎀 Features
+## 🎀 Features
 Home Page
 
 - Hello Kitty pink theme
@@ -21,14 +21,14 @@ Home Page
 - Randomized quote generator
 - Clean layout
 
-##🎀 Projects Page
+## 🎀 Projects Page
 
 - Card layout displaying two projects:
 - My personal website
 - A weather application made with the Open-Meteo API
 - Responsive grid layout
 
-##🎀 Weather App (API Project)
+## 🎀 Weather App (API Project)
 
 - Uses Open-Meteo Weather API
 - Search by city
@@ -36,12 +36,12 @@ Home Page
 - Built with JavaScript using fetch()
 - Styled to match Hello Kitty theme
 
-##🎀 Contact Page
+## 🎀 Contact Page
 
 - Minimalist pink design
 - Contact text and layout aligned with overall theme
 
-##🎀 Styling & Design
+## 🎀 Styling & Design
 
 - Custom CSS variables for theme consistency
 - Mobile responsiveness
@@ -50,7 +50,7 @@ Home Page
 - Custom fonts and colors
 - Cute, branded visuals throughout
 
-##🎀Technologies Used
+## 🎀Technologies Used
 
 - HTML5
 - CSS3
@@ -58,7 +58,7 @@ Home Page
 - Open-Meteo API
 - GitHub Pages Deployment
 
-##🎀 Credits
+## 🎀 Credits
 
 All design and code created by Audreynette Lydgate.
 Images credited to Sanrio and Pinterest sources (for educational use only).
