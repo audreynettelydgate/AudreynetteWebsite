@@ -1,64 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Weather App</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .weather-card {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffe6f2;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 140, 180, 0.4);
+      text-align: center;
+    }
+
+    .weather-card input {
+      width: 80%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid pink;
+      margin-bottom: 10px;
+      outline: none;
+    }
+
+    .weather-card button {
+      padding: 10px 20px;
+      background: hotpink;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .weather-result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body class="pink-theme">
-<nav class="nav">
-<img class="kitty-icon" src="https://wallpapers.com/images/featured/hello-kitty-pictures-xeulf538v4jogtue.jpg" alt="Kitty Icon">
-<a href="./index.html">Home</a>
-<a href="./projects.html">Projects</a>
-<a href="./contact.html">Contact</a>
-<button id="themeToggle" aria-label="Toggle theme">🎀</button>
-</nav>
 
+  <nav class="nav">
+    <a href="./projects.html">← Back to Projects</a>
+  </nav>
 
-<main class="weather-container">
-<h1>🌤️ Hello Kitty Weather App</h1>
-<p class="tagline">Check the weather anywhere, cuteness included 💖</p>
+  <div class="weather-card">
+    <h2>🌸 Hello Kitty Weather App 🌸</h2>
+    <input type="text" id="city" placeholder="Enter a city…">
+    <button onclick="getWeather()">Check Weather</button>
 
+    <div id="result" class="weather-result"></div>
+  </div>
 
-<div class="weather-box">
-<input type="text" id="cityInput" placeholder="Enter city name..." />
-<button id="checkWeather">Check Weather</button>
+  <script>
+    async function getWeather() {
+      const city = document.getElementById('city').value;
+      const result = document.getElementById('result');
 
+      if (!city) {
+        result.textContent = "Please enter a city 💕";
+        return;
+      }
 
-<div id="weatherResult" class="weather-result hidden">
-<h2 id="location"></h2>
-<p id="temperature"></p>
-<p id="conditions"></p>
-</div>
-</div>
-</main>
+      try {
+        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=38&longitude=-77&current_weather=true`);
+        const data = await res.json();
 
+        result.innerHTML = `
+          Temperature: ${data.current_weather.temperature}°C 🌡️ <br>
+          Windspeed: ${data.current_weather.windspeed} km/h 💨
+        `;
+      } catch {
+        result.textContent = "Weather couldn’t load 😿";
+      }
+    }
+  </script>
 
-<script>
-document.getElementById('checkWeather').addEventListener('click', async () => {
-const city = document.getElementById('cityInput').value;
-if (!city) return alert("Please enter a city!");
-
-
-const API_KEY = "https://api.weatherapi.com/v1/current.json?key=7cfac0c7da2e41b884b150526250211&q=";
-
-
-try {
-const res = await fetch(API_KEY + city);
-const data = await res.json();
-
-
-document.getElementById('location').textContent = data.location.name + ", " + data.location.region;
-document.getElementById('temperature').textContent = "Temperature: " + data.current.temp_f + "°F";
-document.getElementById('conditions').textContent = "Condition: " + data.current.condition.text;
-
-
-document.getElementById('weatherResult').classList.remove('hidden');
-} catch (err) {
-alert("City not found or API error.");
-}
-});
-</script>
 </body>
 </html>
